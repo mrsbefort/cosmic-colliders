@@ -1,0 +1,275 @@
+/*
+? @document-start
+======================
+| PRIMARY STYLESHEET |
+==================================================================================================================================
+
+? @author:                 Amy Nikitas, Gabrielle Befort
+? @document-name:          main-style.css
+? @document-created:       03/22/2022
+? @document-modified:      03/22/2022
+? @document-version:       v1.0.0
+
+==================================================================================================================================
+
+? @document-info
+==================
+| ABOUT DOCUMENT |
+==================================================================================================================================
+
+==================================================================================================================================
+
+? @document-todo
+=================
+| DOCUMENT TODO |
+==================================================================================================================================
+
+==================================================================================================================================
+*/
+
+/* ---------------- */
+/* Global Variables */
+/* ---------------- */
+
+/*This is the color scheme for our website*/
+:root {
+    --dr-blue: #5020b0;
+    --blue: #4762c4;
+    --purple: #5a2585;
+    --lt-blue: #41a0d6;
+    --dr-pink: #932f81;
+    --pink: #c93880;
+    --white: #ffffff;
+    --border-radius: .3rem;
+}
+
+/* ------------------- */
+/* Global Declarations */
+/* ------------------- */
+
+/* overwrite bulma styles */
+html {
+    background-color: #726384;
+}
+
+body {
+    background-image: url('../../assets/imgs/107974-space-space_art-comet-digital_art-748x468.png');
+    background-size: cover;
+    background-position: top;
+    color: white;
+}
+
+strong {
+    color: inherit;
+}
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: #bfebff;
+}
+
+h1 {
+    text-shadow: 0 0 5px rgb(131, 209, 255);
+}
+
+h2, h6 {
+    color: white !important;
+}
+
+h6 {
+    color: white !important;
+}
+
+table {
+    background: none !important; 
+}
+
+th {
+    color: white !important;
+    /* text-shadow: 0 0 5px; */
+    /* background: rgba(0,0,0,0.5); */
+}
+
+td {
+    color: white;
+    /* text-shadow: 0 0 5px white; */
+}
+
+tbody tr:nth-child(2n+1) td {
+    color: #ffa500;
+}
+
+
+/* --------------- */
+/* Utility Classes */
+/* --------------- */
+
+.fill-viewport {
+    width: 100vw;
+    height: 100vh;
+}
+
+.has-background-info {
+    background-color: #2b455b !important;
+}
+
+.is-info {
+    background-color: #335776 !important;
+}
+
+/* ------------------ */
+/* Main Header Styles */
+/* ------------------ */
+
+.main-wrapper {
+}
+
+/* Main <header> div */
+.main-header {
+}
+
+/* Header sub-text */
+.main-header > p {
+    color: white;
+}
+
+.button.is-small {
+    font-size: 1rem;
+}
+
+.fill-parent {
+    width: 100%;
+    height: 100%;
+}
+
+.start-top {
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.filter-btn-pressed {
+    background-color: #ad6c23 !important;
+    color: white !important;
+}
+
+.error-message.error-message {
+    background-color: #895252 !important;
+    color: white !important;
+}
+
+/* ------------------- */
+/* Main Section Styles */
+/* ------------------- */
+
+#neo-search-field-parent {
+    position: relative;
+}
+
+#new-apod-btn {
+    /* background-color: #ffa500; */
+    background-color: #060a10;
+    color: white;
+    border-color: #ad6c23 !important;
+}
+
+#apod-img {
+    border-radius: 20px;
+}
+
+.neo-search-field {
+    border-radius: 20px;
+    background-color: #070a0f !important;
+    color: white;
+}
+
+.neo-search-field::placeholder {
+    color: white;
+}
+
+.neo-search-history-container {
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-height: 125px;
+    overflow-y: scroll;
+}
+
+.neo-search-history-container > button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background-color: inherit;
+    border-radius: 0;
+    border: none;
+    transition: background-color 0.25s;
+}
+
+.neo-search-history-container > button:hover {
+    background-color: rgb(199, 199, 199);
+}
+
+.neo-search-history-container > p {
+    color: black;
+    padding: 0;
+}
+
+.search-dropdown {
+    z-index: 10;
+    position: absolute;
+    min-height: 60px;
+    background-color: white;
+    transform: translate(3%, -1px);
+    width: 94%;
+    padding: 10px;
+    display: none;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.scroll-style {
+    padding-right: 5px;
+    overflow-y: auto;
+}
+
+/* Modify scrollbar container */
+.scroll-style::-webkit-scrollbar {
+    width: 10px;
+}
+  
+/* Modify scrollbar track */
+.scroll-style::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #f1f1f1;
+}
+
+/* Modify scrollbar thumb */
+.scroll-style::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.search-result-container > * {
+    background: none;
+    border-radius: 20px;
+    box-shadow: 0px -10px 0 #3e8ed0;
+}
+
+.search-result-container {
+    min-height: 500px;
+}
+
+.neo-table-content {
+    height: 350px;
+    /* box-shadow: 0 0 10px white; */
+    border-radius: 20px;
+}
+
+.apod-container {
+    height: 304px;
+    width: 100%;
+    border-radius: 20px;
+}

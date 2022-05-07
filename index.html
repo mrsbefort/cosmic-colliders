@@ -1,0 +1,251 @@
+<!-- 
+? @document-start
+================
+| LANDING PAGE |
+==================================================================================================================================
+
+? @author:                  Cosmic Colliders™ Team
+                            James Primitive (Christopher J. Hoke),
+                            Amy Nikitas, 
+                            Gabrielle Befort, 
+                            William J. Horn
+
+? @document-name:           index.html
+? @document-created:        03/22/2022
+? @document-modified:       04/02/2022
+? @document-version:        v1.1.0
+
+==================================================================================================================================
+
+? @document-info
+==================
+| ABOUT DOCUMENT |
+==================================================================================================================================
+
+----------------------------
+Welcome to Cosmic Colliders!
+----------------------------
+
+This interactive web application allows our stargazed users to search for Near-Earth Objects (NEOs) by year, distance
+away from Earth (in KM), and by name. This enables anyone who is studying such objects to easily filter out the NEO
+or group of NEOs that they're interested in, along with being a fun-fact app for casual connoisseurs of the cosmos!
+
+This was a team-effort project brought to you by the following collaborators and their roles:
+
+    *- James Primitive (Christopher J. Hoke)
+        ? Programmer (Javascript), Troubleshooter, API wizard
+
+    *- Amy Nikitas
+        ? Designer, HTML/CSS Developer, Color Artist
+    
+    *- Gabrielle Befort
+        ? Designer, HTML/CSS Developer, Bulma Implementor
+
+    *- William J. Horn
+        ? Programmer (Javascript), Troubleshooter, UI Integration
+
+==================================================================================================================================
+
+? @document-board
+=================
+| DOCUMENT BOARD |
+==================================================================================================================================
+
+    todo: develop page footer --DONE
+    todo: improve page footer to include active links that direct user to additional information sites/forms --NOT DONE
+    !bug: fix issue with 'See More Image/Facts' button not working sometimes --FIXED
+
+==================================================================================================================================
+-->
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+<<<<<<< HEAD
+        <!-- ** Title ** -->
+        <title>Cosmic Colliders</title>
+
+=======
+>>>>>>> af3171321b70a96a5bb4e3bbad629794e0e9148c
+        <!-- ** Metadata ** -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta content="ie=edge"/>
+        <meta name="author" content="Cosmic Colliders Team"/>
+        <meta name="description" content="Observe the potential dangers of space"/>
+
+        <!-- ** Title ** -->
+        <title>Cosmic Colliders</title>
+
+        <!-- ** CSS Third Party ** -->
+        <!-- random starter font apis -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@900&family=Press+Start+2P&family=Raleway:wght@100&family=Source+Code+Pro:wght@200;300;400&display=swap">
+        <!-- Bulma Framework -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"/> 
+
+        <!-- ** Local CSS ** -->
+        <!-- css libraries -->
+        <link rel="stylesheet" href="./resources/workspace/css/libs/visibility.css"/> <!-- css visibility utility -->
+        <!-- main styles -->
+        <link rel="stylesheet" href="./resources/workspace/css/main-style.css"/>
+    </head>
+    
+    <body class="">
+        <!-- BEGIN HTML FRAMEWORK HERE >>BEGIN -->
+
+        <!-- All page content -->
+        <div class="main-wrapper content mb-0 has-text-centered">
+
+            <!-- Main page header -->
+            <header class="main-header p-4 has-background-info">
+                <h1 class="title is-1 has-text-primary-light has-text-weight-bold">Cosmic Colliders</h1>
+                <p class="is-size-6">Find a NEO near you!</p>
+            </header>
+
+            <!-- Main page body (contains everything between <header> and <footer> -->
+            <main class="container mt-3 mb-4 p-4">
+
+                <!-- Instructional help section. Provides some information on what we are and how to use our app. -->
+                <div class="columns is-centered">
+                    <div class="content column is-four-fifths">
+                        <!-- ? maybe replace these <strong> tags with <p>> and style them in css later ? -->
+                        <p class="pb-1"><strong>Welcome to Cosmic Colliders!</strong></p> 
+                        <p>
+                            This application allows you to search 
+                            through our cosmic neighborhood for interesting near-Earth objects (NEO for short). Our dynamic search algorithm
+                            enables you to enter what you would like to search, and filter that search by clicking one of the three search filter
+                            buttons below the search bar. Press enter to make the search request, or click the search filter buttons below a second time!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Main search bar -->
+                <div class="search-container columns is-centered mb-6">
+                    <div class="field column is-two-thirds">
+                        <div id="neo-search-field-parent" class="control is-large"> <!-- @note: add 'is-loading' class to this div in the Javascript to show loading animation -->
+
+                            <!-- Search bar -->
+                            <input id="neo-search-field" 
+                                autocomplete="off"
+                                class="neo-search-field input is-medium" 
+                                type="text" 
+                                placeholder="Search...">
+
+                            <!-- Search dropdown -->
+                            <div id="neo-search-dropdown" class="search-dropdown">
+                                <div id="neo-search-history-container" class="neo-search-history-container scroll-style">
+                                    <!-- ! generate search result buttons in main.js ! -->
+                                </div>
+                            </div>
+
+                            <!-- Search filter buttons -->
+                            <div id="search-filter-btns" class="buttons is-small is-centered mt-5">
+                                <button class="button is-info is-rounded mx-3" id="name-btn">Search by Name</button>
+                                <button class="button is-info is-rounded mx-3" id="year-btn">Search by Year</button>
+                                <button class="button is-info is-rounded mx-3" id="dist-btn">Search by Distance (KM)</button>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search result containers -->
+                <div class="search-result-container columns">
+
+                    <!-- ||| NEO Data table column ||| -->
+                    <div class="column p-3 my-6 start-top"> <!-- @note: change background color later -->
+
+                        <!-- ||| Column header ||| -->
+                        <div class="column-header">
+                            <h2 class="title">NEO Data</h2>
+                        </div>
+
+                        <!-- Column content -->
+                        <!-- <div class="table-container"> -->
+                        <div class="neo-table-content fill-parent scroll-style">
+                            <table id="neo-table" class="table has-text-left scroll-style">
+
+                                <!-- NEO table head (Name, Distance, Date Observed) -->
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Distance</th>
+                                        <th>Date Observed</th>
+                                    </tr>
+                                </thead>
+
+                                <!-- NEO table content -->
+                                <tbody id="neo-table-body" class="neo-table-body">
+                                    <!-- ! generate these in main.js ! -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- ||| Astronomy picture of the day column ||| -->
+                    <div class="column p-3 my-6 start-top">
+
+                        <!-- Column heading -->
+                        <header class="column-header content">
+                            <h2 class="title">Image of the Day</h2>
+                            <div class="columns is-centered is-mobile px-6">
+                                <!-- take user to internal image-loader.html -->
+                                <input 
+                                    id="more-facts-btn"
+                                    class="button column is-half is-info is-rounded p-0" 
+                                    type="button" 
+                                    onclick="location.href='./image-loader.html'" 
+                                    value="See More Images/Facts"
+                                />
+                                <button id="new-apod-btn" class="button column is-half is-rounded p-0 mx-3">New Image of the Day</button>
+                            </div>
+                        </header>
+
+                        <!-- Column content -->
+                        <div id="apod-container" class="apod-container fill-parent scroll-style">
+                            <img id="apod-img" src="" alt="">
+                            <p><i></i></p>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- End Main page body -->
+            </main>
+
+            <footer class="p-4 pb-5 mt-6 has-background-info">
+                <div class="footer-heading">
+                    <h2 class="title is-3 has-text-primary-light">About Us</h2>
+                    <h6>Hi we are Cosmic Colliders. We join together as four coding bootcamp students to create this project. 
+                        We are all students of UNC Chapel Hill. 
+                        Our group members are made up of: Amy Nikitas, Gabrielle Befort, William Horn and Christopher James Hoke. 
+<<<<<<< HEAD
+                        We are passionate about coding and love bouncing ideas off one another. </h6>
+=======
+                        We are passionate about coding and love bouncing ideas off one another. 
+                    </h6>
+>>>>>>> af3171321b70a96a5bb4e3bbad629794e0e9148c
+                </div>
+
+                <div class="container">
+                    <div class="columns is-centered">
+                        <div class="column is-half">
+                            <a href="https://github.com/william-horn/cosmic-colliders">Contact Us</a>
+                            | 
+                            <a href="http://https://discord.com/channels/@me/955623375760392254">Join Our Team!</a>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+
+        <!-- BEGIN FRAMEWORK HERE <<END -->
+        <!-- Load jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- load main script -->
+        <script type="module" src="resources\workspace\js\main.js"></script>
+    </body>
+</html>
